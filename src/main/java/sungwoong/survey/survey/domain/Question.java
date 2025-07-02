@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-@ToString
+@ToString(callSuper = true)
 @Entity
 public class Question extends BaseEntity {
 
@@ -24,6 +24,7 @@ public class Question extends BaseEntity {
 
     private boolean isDeleted;
 
+    @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "survey_id")
     private Survey survey;

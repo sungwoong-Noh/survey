@@ -6,7 +6,7 @@ import lombok.ToString;
 import sungwoong.survey.BaseEntity;
 
 @Getter
-@ToString
+@ToString(callSuper = true)
 @Entity
 public class Choice extends BaseEntity {
 
@@ -14,6 +14,7 @@ public class Choice extends BaseEntity {
 
     private boolean isDeleted;
 
+    @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "question_id")
     private Question question;

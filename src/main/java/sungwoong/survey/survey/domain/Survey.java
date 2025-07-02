@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-@ToString
+@ToString(callSuper = true)
 @Entity
 public class Survey extends BaseEntity {
 
