@@ -1,4 +1,21 @@
 package sungwoong.survey.survey.domain;
 
-public class Choice {
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.ToString;
+import sungwoong.survey.BaseEntity;
+
+@Getter
+@ToString
+@Entity
+public class Choice extends BaseEntity {
+
+    private String choiceValue;
+
+    private boolean isDeleted;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "question_id")
+    private Question question;
+
 }
