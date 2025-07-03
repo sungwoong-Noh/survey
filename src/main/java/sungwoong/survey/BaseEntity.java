@@ -13,6 +13,7 @@ import java.util.Objects;
 @Getter
 @MappedSuperclass
 public class BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;

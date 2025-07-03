@@ -1,5 +1,6 @@
 package sungwoong.survey.survey;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
@@ -23,6 +24,6 @@ public class Survey extends BaseEntity {
 
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "survey")
+    @OneToMany(mappedBy = "survey", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Question> questions = new ArrayList<>();
 }
