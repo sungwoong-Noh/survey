@@ -20,7 +20,7 @@ public class SurveySubmission extends BaseEntity {
 
     private LocalDateTime submittedAt;
 
-    @OneToMany(mappedBy = "surveySubmission", cascade = {CascadeType.PERSIST})
+    @OneToMany(mappedBy = "submission", cascade = {CascadeType.PERSIST})
     private List<Answer> answers = new ArrayList<>();
 
 
