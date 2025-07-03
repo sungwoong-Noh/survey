@@ -1,7 +1,6 @@
 package sungwoong.survey.submission.domain;
 
 import jakarta.persistence.Embeddable;
-import lombok.Getter;
 import sungwoong.survey.survey.QuestionType;
 
 import java.io.Serializable;

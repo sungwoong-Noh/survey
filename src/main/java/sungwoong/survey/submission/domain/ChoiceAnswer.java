@@ -1,11 +1,24 @@
 package sungwoong.survey.submission.domain;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import sungwoong.survey.BaseEntity;
+import jakarta.persistence.OneToMany;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-public class ChoiceAnswer extends BaseEntity {
+@DiscriminatorValue("Choice")
+public class ChoiceAnswer extends Answer {
 
-    private String choiceValue;
 
+    @OneToMany(mappedBy = "choiceAnswer", cascade = CascadeType.PERSIST)
+    private Set<SelectedChoice> selectedChoices = new HashSet<>();
+
+
+    @Override
+    boolean validate() {
+        return false;
+    }
 }

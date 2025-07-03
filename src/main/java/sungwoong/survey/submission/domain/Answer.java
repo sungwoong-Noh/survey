@@ -17,4 +17,6 @@ public abstract class Answer extends BaseEntity {
     @Embedded
     private QuestionSnapshot questionSnapshot;
 
+    abstract boolean validate();
+
 }
