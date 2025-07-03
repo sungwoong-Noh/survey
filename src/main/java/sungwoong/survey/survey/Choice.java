@@ -12,8 +12,6 @@ public class Choice extends BaseEntity {
 
     private String choiceValue;
 
-    private boolean isDeleted;
-
     @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id")
