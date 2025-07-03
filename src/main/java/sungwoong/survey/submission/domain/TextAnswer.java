@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 @DiscriminatorValue("TEXT")
 public class TextAnswer extends Answer{
 
+    private String answerText;
 
     @Override
     boolean validate() {

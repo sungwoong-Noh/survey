@@ -6,7 +6,7 @@ import sungwoong.survey.BaseEntity;
 
 @Getter
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "answer_type")
 public abstract class Answer extends BaseEntity {
 
