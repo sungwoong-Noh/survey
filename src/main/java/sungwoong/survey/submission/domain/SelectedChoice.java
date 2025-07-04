@@ -1,10 +1,8 @@
 package sungwoong.survey.submission.domain;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import sungwoong.survey.BaseEntity;
-import sungwoong.survey.survey.ChoiceId;
+import sungwoong.survey.survey.domain.ChoiceId;
 
 import java.util.Objects;
 
