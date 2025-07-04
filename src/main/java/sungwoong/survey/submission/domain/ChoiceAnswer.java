@@ -13,7 +13,7 @@ import java.util.Set;
 public class ChoiceAnswer extends Answer {
 
 
-    @OneToMany(mappedBy = "choiceAnswer", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "choiceAnswer", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SelectedChoice> selectedChoices = new HashSet<>();
 
 

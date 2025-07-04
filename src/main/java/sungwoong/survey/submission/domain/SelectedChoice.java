@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import sungwoong.survey.BaseEntity;
+import sungwoong.survey.survey.ChoiceId;
 
 import java.util.Objects;
 
@@ -12,6 +13,10 @@ public class SelectedChoice extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "choice_answer_id")
     private ChoiceAnswer choiceAnswer;
+
+
+    @Embedded
+    private ChoiceId choiceId;
 
     @Embedded
     private ChoiceSnapshot choiceSnapshot;
