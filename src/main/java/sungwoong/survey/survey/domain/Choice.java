@@ -1,13 +1,19 @@
 package sungwoong.survey.survey.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import sungwoong.survey.BaseEntity;
 
 @Getter
 @ToString(callSuper = true)
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Choice extends BaseEntity {
 
     private String value;
