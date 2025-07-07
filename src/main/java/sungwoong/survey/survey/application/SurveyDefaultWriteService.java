@@ -25,8 +25,8 @@ public class SurveyDefaultWriteService implements SurveyWriteService {
 
         Survey survey = surveyFactory.create(createRequest);
 
-        survey.getSurveyCreateEvents().forEach(applicationEventPublisher::publishEvent);
-        survey.getSurveyCreateEvents().clear();
+//        survey.getSurveyCreateEvents().forEach(applicationEventPublisher::publishEvent);
+//        survey.getSurveyCreateEvents().clear();
 
         return surveyRepository.save(survey);
     }
