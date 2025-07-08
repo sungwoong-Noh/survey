@@ -12,13 +12,11 @@ pipeline {
         stage('Build') {
             steps {
                 sh './gradlew clean build'
-                // Gradle인 경우:
             }
         }
         stage('Archive JAR') {
             steps {
                 archiveArtifacts artifacts: 'build/libs/*.jar', allowEmptyArchive: false
-                // Gradle인 경우:
             }
         }
     }
