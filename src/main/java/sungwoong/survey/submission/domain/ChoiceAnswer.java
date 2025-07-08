@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@DiscriminatorValue("Choice")
+@DiscriminatorValue("CHOICE")
 public class ChoiceAnswer extends Answer {
 
 

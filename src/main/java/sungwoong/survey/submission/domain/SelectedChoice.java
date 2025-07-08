@@ -1,10 +1,11 @@
 package sungwoong.survey.submission.domain;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import sungwoong.survey.BaseEntity;
-import sungwoong.survey.survey.ChoiceId;
+import sungwoong.survey.survey.domain.ChoiceId;
 
 import java.util.Objects;
 

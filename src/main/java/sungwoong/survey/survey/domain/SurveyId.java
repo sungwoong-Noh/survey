@@ -1,9 +1,8 @@
-package sungwoong.survey.survey;
+package sungwoong.survey.survey.domain;
 
 import jakarta.persistence.Embeddable;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 @Embeddable
 public record SurveyId(Long surveyId) implements Serializable {
