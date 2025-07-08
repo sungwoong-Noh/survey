@@ -17,7 +17,6 @@ pipeline {
         stage('Archive JAR') {
             steps {
                 archiveArtifacts artifacts: 'build/libs/*.jar', allowEmptyArchive: false
-
             }
         }
     }
