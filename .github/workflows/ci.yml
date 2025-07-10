@@ -63,7 +63,8 @@ jobs:
       # 8. Docker 이미지 빌드 및 ECR 푸시 (Build and push Docker image to ECR)
       - name: Build and push Docker image to ECR
         env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REGISTRY: public.ecr.aws/o3q0p5x7/e-commerce_1
+#          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
         run: |
           echo "Building Docker image..."
