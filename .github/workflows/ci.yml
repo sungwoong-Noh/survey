@@ -77,5 +77,5 @@ jobs:
           docker push public.ecr.aws/o3q0p5x7/e-commerce_1:latest
           
           echo "Image pushed successfully!"
-          echo "Image URI: $ECR_REGISTRY/$ECR_REPOSITORY:latest"
+#          echo "Image URI: $ECR_REGISTRY/$ECR_REPOSITORY:latest"
       
