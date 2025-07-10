@@ -68,14 +68,11 @@ jobs:
           ECR_REPOSITORY: o3q0p5x7/e-commerce_1  # 👈 콘솔에서 본 경로
         run: |
           echo "Building Docker image..."
-#          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
-          docker build -t e-commerce_1 .
-          docker tag e-commerce_1:latest public.ecr.aws/o3q0p5x7/e-commerce_1:latest
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
           
           echo "Pushing Docker image to ECR Public..."
-#          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
-          docker push public.ecr.aws/o3q0p5x7/e-commerce_1:latest
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
           
           echo "Image pushed successfully!"
-#          echo "Image URI: $ECR_REGISTRY/$ECR_REPOSITORY:latest"
+          echo "Image URI: $ECR_REGISTRY/$ECR_REPOSITORY:latest"
       
