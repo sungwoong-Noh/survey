@@ -35,7 +35,6 @@ RUN chown spring:spring /app/app.jar
 
 USER spring
 
-
 # 포트 노출
 EXPOSE 8080
 
