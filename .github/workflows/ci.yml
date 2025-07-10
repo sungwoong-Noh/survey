@@ -65,7 +65,7 @@ jobs:
       - name: Build and push Docker image to ECR Public
         env:
           ECR_REGISTRY: public.ecr.aws
-          ECR_REPOSITORY: o3q0p5x7/e-commerce_1  # 👈 콘솔에서 본 경로
+          ECR_REPOSITORY: o3q0p5x7/survey  # 👈 콘솔에서 본 경로
         run: |
           echo "Building Docker image..."
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
