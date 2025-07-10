@@ -52,25 +52,25 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-northeast-2
+          aws-region: us-east-1  # 👈 ECR Public은 us-east-1 리전만 지원
 
-
-      # 7. AWS ECR 로그인 (Login to Amazon ECR)
-      - name: Login to Amazon ECR
-        id: login-ecr
+      # 7. AWS ECR Public 로그인 (Login to Amazon ECR Public)
+      - name: Login to Amazon ECR Public
+        id: login-ecr-public
         uses: aws-actions/amazon-ecr-login@v2
+        with:
+          registry-type: public  # 👈 Public Registry 지정
 
-      # 8. Docker 이미지 빌드 및 ECR 푸시 (Build and push Docker image to ECR)
-      - name: Build and push Docker image to ECR
+      # 8. Docker 이미지 빌드 및 ECR Public 푸시 (Build and push Docker image to ECR Public)
+      - name: Build and push Docker image to ECR Public
         env:
-          ECR_REGISTRY: public.ecr.aws/o3q0p5x7/e-commerce_1
-#          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
+          ECR_REGISTRY: public.ecr.aws
+          ECR_REPOSITORY: o3q0p5x7/e-commerce_1  # 👈 콘솔에서 본 경로
         run: |
           echo "Building Docker image..."
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
           
-          echo "Pushing Docker image to ECR..."
+          echo "Pushing Docker image to ECR Public..."
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
           
           echo "Image pushed successfully!"
