@@ -14,9 +14,9 @@ public class SurveyFactory {
 
     public Survey create(SurveyCreateRequest surveyRequest) {
 
-        List<Question> questions = createQuestions(surveyRequest.getQuestionCreateRequestList());
+        List<Question> questions = createQuestions(surveyRequest.questionCreateRequestList());
 
-        return Survey.create(surveyRequest.getTitle(), surveyRequest.getDescription(), questions);
+        return Survey.create(surveyRequest.title(), surveyRequest.description(), questions);
     }
 
 
@@ -30,13 +30,13 @@ public class SurveyFactory {
 
     private Question createQuestion(QuestionCreateRequest questionRequest) {
 
-        List<Choice> choices = createChoices(questionRequest.getChoiceCreateRequestList());
+        List<Choice> choices = createChoices(questionRequest.choiceCreateRequestList());
 
         return Question.create(
-                questionRequest.getQuestionText(),
-                questionRequest.getDescription(),
+                questionRequest.questionText(),
+                questionRequest.description(),
                 questionRequest.getQuestionTypeEnum(),
-                questionRequest.getIsRequired(),
+                questionRequest.isRequired(),
                 choices);
     }
 
@@ -48,7 +48,7 @@ public class SurveyFactory {
         }
 
         return choiceRequests.stream()
-                .map(choiceRequest -> Choice.create(choiceRequest.getValue()))
+                .map(choiceRequest -> Choice.create(choiceRequest.value()))
                 .collect(Collectors.toList());
     }
 }

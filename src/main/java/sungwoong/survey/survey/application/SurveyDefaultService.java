@@ -36,7 +36,6 @@ public class SurveyDefaultService implements SurveyWriteService, SurveyReadServi
         return surveyRepository.save(survey);
     }
 
-
     /**
      * ReadImpl
      * @param surveyId
