@@ -71,7 +71,7 @@ class SurveyCreateRequestTest {
                 .containsExactlyInAnyOrder(
                         tuple("title", "설문조사 제목은 1글자 이상 100글자 이하여야 합니다."),
                         tuple("description", "설문조사 설명은 1글자 이상 700글자 이하여야 합니다."),
-                        tuple("questionCreateRequestList", "질문은 필수로 입니다.")
+                        tuple("questionCreateRequestList", "질문은 1개 이상, 10개 이하여야 합니다.")
                 );
     }
 
