@@ -44,7 +44,6 @@ public class Question extends BaseEntity {
         for (Choice choice : choices) {
             addChoice(choice);
         }
-
     }
 
     // 외부에서 사용하는 것을 막기 위해 default 접근제한자로 설정
@@ -79,9 +78,7 @@ public class Question extends BaseEntity {
     }
 
     void addChoice(Choice choice) {
-
         this.choices.add(choice);
         choice.setQuestion(this);
-
     }
 }
