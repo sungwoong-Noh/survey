@@ -10,10 +10,10 @@ import sungwoong.survey.survey.QuestionType;
 import java.util.List;
 
 public record QuestionCreateRequest(
-        @NotBlank(message = "질문 내용은 필수입니다.") @Size(min = 1, max = 100, message = "질문 내용은 1글자 이상 100글자 이하여야 합니다.") String questionText,
+        @NotBlank(message = "질문 내용은 필수입니다.") @Size(max = 100, message = "질문 내용은 1글자 이상 100글자 이하여야 합니다.") String questionText,
         @Size(max = 50, message = "질문 설명은 50글자 이내여야 합니다.") String description,
         @NotBlank @Pattern(regexp = "SINGLE_CHOICE|MULTIPLE_CHOICE|SHORT_TEXT|LONG_TEXT", message = "유효하지 않은 질문 유형입니다.") String questionType,
-        @NotNull Boolean isRequired,
+        @NotNull(message = "질문 필수여부를 선택해주세요.") Boolean isRequired,
         @Valid List<ChoiceCreateRequest> choiceCreateRequestList
 ) {
     public QuestionType getQuestionTypeEnum() {
