@@ -1,4 +1,4 @@
-package sungwoong.survey.survey.domain;
+package sungwoong.survey.survey;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

@@ -5,7 +5,7 @@ import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import sungwoong.survey.BaseEntity;
-import sungwoong.survey.survey.domain.SurveyId;
+import sungwoong.survey.survey.SurveyId;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

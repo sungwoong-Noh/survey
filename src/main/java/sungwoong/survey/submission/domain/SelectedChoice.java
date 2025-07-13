@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import sungwoong.survey.BaseEntity;
-import sungwoong.survey.survey.domain.ChoiceId;
+import sungwoong.survey.survey.ChoiceId;
 
 import java.util.Objects;
 

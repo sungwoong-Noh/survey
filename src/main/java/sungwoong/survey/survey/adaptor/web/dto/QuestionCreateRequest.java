@@ -1,4 +1,4 @@
-package sungwoong.survey.survey.adaptor;
+package sungwoong.survey.survey.adaptor.web.dto;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import sungwoong.survey.survey.domain.QuestionType;
+import sungwoong.survey.survey.QuestionType;
 
 import java.util.List;
 

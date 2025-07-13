@@ -1,4 +1,4 @@
-package sungwoong.survey.survey.adaptor;
+package sungwoong.survey.survey.adaptor.web.dto;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;

@@ -1,9 +1,9 @@
-package sungwoong.survey.survey.domain;
+package sungwoong.survey.survey;
 
 import org.springframework.stereotype.Component;
-import sungwoong.survey.survey.adaptor.ChoiceCreateRequest;
-import sungwoong.survey.survey.adaptor.QuestionCreateRequest;
-import sungwoong.survey.survey.adaptor.SurveyCreateRequest;
+import sungwoong.survey.survey.adaptor.web.dto.ChoiceCreateRequest;
+import sungwoong.survey.survey.adaptor.web.dto.QuestionCreateRequest;
+import sungwoong.survey.survey.adaptor.web.dto.SurveyCreateRequest;
 
 import java.util.ArrayList;
 import java.util.List;

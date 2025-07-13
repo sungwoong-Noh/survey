@@ -3,7 +3,7 @@ package sungwoong.survey.submission.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import sungwoong.survey.BaseEntity;
-import sungwoong.survey.survey.domain.QuestionId;
+import sungwoong.survey.survey.QuestionId;
 
 @Getter
 @Entity

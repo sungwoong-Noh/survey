@@ -2,7 +2,7 @@ package sungwoong.survey.submission.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import sungwoong.survey.survey.domain.QuestionType;
+import sungwoong.survey.survey.QuestionType;
 
 import java.io.Serializable;
 

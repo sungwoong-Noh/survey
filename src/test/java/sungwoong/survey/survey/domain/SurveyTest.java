@@ -2,6 +2,9 @@ package sungwoong.survey.survey.domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import sungwoong.survey.survey.Question;
+import sungwoong.survey.survey.QuestionType;
+import sungwoong.survey.survey.Survey;
 
 import java.util.List;
 import java.util.stream.IntStream;
