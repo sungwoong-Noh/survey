@@ -16,7 +16,19 @@ public class FixtureCreateRequest {
             questionCreateRequests.add(new QuestionCreateRequest("qq", "qq", QuestionType.SHORT_TEXT.name(), false, null));
         });
 
-        return new SurveyCreateRequest("a".repeat(101), "a".repeat(701), null);
+        return new SurveyCreateRequest("a".repeat(101), "a".repeat(701), questionCreateRequests);
+
+    }
+
+    public static SurveyCreateRequest serviceCreateRequest_normal() {
+
+        List<QuestionCreateRequest> questionCreateRequests = new ArrayList<>();
+        IntStream.range(0, 10).forEach(i -> {
+            questionCreateRequests.add(new QuestionCreateRequest("questionText" + i, "questionDescription" + 1, QuestionType.SHORT_TEXT.name(), false, null));
+        });
+
+        return new SurveyCreateRequest("a".repeat(100), "a".repeat(700), questionCreateRequests);
+
 
     }
 }
