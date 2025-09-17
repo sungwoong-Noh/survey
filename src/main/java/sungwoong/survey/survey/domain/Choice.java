@@ -1,4 +1,4 @@
-package sungwoong.survey.survey;
+package sungwoong.survey.survey.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import sungwoong.survey.BaseEntity;
+
+import java.util.Objects;
 
 @Getter
 @ToString(callSuper = true)
@@ -42,4 +44,22 @@ public class Choice extends BaseEntity {
         return new Choice(value);
     }
 
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof Choice choice)) {
+            return false;
+        }
+
+        return Objects.equals(getId(), choice.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
 }

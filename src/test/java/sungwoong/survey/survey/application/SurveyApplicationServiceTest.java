@@ -5,17 +5,14 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import sungwoong.survey.survey.SurveyFactory;
-import sungwoong.survey.survey.port.required.SurveyJpaRepository;
+import sungwoong.survey.survey.adaptor.out.SurveyJpaRepository;
 
 @ExtendWith(MockitoExtension.class)
-class SurveyDefaultServiceTest {
+class SurveyApplicationServiceTest {
 
     @InjectMocks
-    private SurveyDefaultService surveyDefaultService;
+    private SurveyApplicationService surveyApplicationService;
 
-    @Mock
-    private SurveyFactory surveyFactory;
 
     @Mock
     private SurveyJpaRepository surveyRepository;

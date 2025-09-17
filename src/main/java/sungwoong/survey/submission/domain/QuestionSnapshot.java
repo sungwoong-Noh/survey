@@ -2,13 +2,12 @@ package sungwoong.survey.submission.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import sungwoong.survey.survey.QuestionType;
+import sungwoong.survey.survey.domain.QuestionType;
 
 import java.io.Serializable;
 
 @Embeddable
 public record QuestionSnapshot(
-
         @Column(name = "original_question_Id") Long questionId,
         @Column(name = "original_question_text") String questionText,
         @Column(name = "original_question_description") String questionDescription,

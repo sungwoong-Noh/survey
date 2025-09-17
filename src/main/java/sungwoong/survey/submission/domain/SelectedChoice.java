@@ -5,12 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import sungwoong.survey.BaseEntity;
-import sungwoong.survey.survey.ChoiceId;
+import sungwoong.survey.survey.domain.ChoiceId;
 
 import java.util.Objects;
 
 @Entity
 public class SelectedChoice extends BaseEntity {
+
     @ManyToOne
     @JoinColumn(name = "choice_answer_id")
     private ChoiceAnswer choiceAnswer;
@@ -25,8 +26,7 @@ public class SelectedChoice extends BaseEntity {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || !(o instanceof SelectedChoice)) return false;
-        SelectedChoice that = (SelectedChoice) o;
+        if (!(o instanceof SelectedChoice that)) return false;
         // choiceSnapshot이 null이 아님을 보장하고, 스냅샷의 내용으로 비교
         return choiceSnapshot != null && Objects.equals(choiceSnapshot, that.choiceSnapshot);
     }

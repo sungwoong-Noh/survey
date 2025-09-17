@@ -1,4 +1,4 @@
-package sungwoong.survey.survey;
+package sungwoong.survey.survey.domain;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -6,11 +6,13 @@ import jakarta.persistence.OneToMany;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.Hibernate;
 import sungwoong.survey.BaseEntity;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Entity
@@ -27,7 +29,6 @@ public class Survey extends BaseEntity {
 
     @OneToMany(mappedBy = "survey", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Question> questions = new ArrayList<>();
-
 
     Survey(String title, String description, List<Question> questions) {
         this.title = title;
@@ -62,5 +63,25 @@ public class Survey extends BaseEntity {
         }
 
         return new Survey(title, description, questions);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof Survey survey)) {
+            return false;
+        }
+
+        // PK가 같다면 같은 객체이다.
+        return Objects.equals(getId(), survey.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }
