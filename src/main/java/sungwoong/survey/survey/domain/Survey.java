@@ -1,4 +1,4 @@
-package sungwoong.survey.survey;
+package sungwoong.survey.survey.domain;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

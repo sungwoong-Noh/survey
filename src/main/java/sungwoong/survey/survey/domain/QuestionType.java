@@ -1,4 +1,4 @@
-package sungwoong.survey.survey;
+package sungwoong.survey.survey.domain;
 
 public enum QuestionType {
     SHORT_TEXT,

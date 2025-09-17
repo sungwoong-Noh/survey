@@ -7,6 +7,9 @@ import jakarta.validation.ValidatorFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import sungwoong.survey.survey.adaptor.in.web.dto.ChoiceCreateRequest;
+import sungwoong.survey.survey.adaptor.in.web.dto.QuestionCreateRequest;
+import sungwoong.survey.survey.adaptor.in.web.dto.SurveyCreateRequest;
 import sungwoong.survey.survey.application.fixture.FixtureCreateRequest;
 
 import java.util.Set;

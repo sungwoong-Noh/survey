@@ -1,8 +1,8 @@
 package sungwoong.survey.survey.application.fixture;
 
-import sungwoong.survey.survey.QuestionType;
-import sungwoong.survey.survey.adaptor.web.dto.QuestionCreateRequest;
-import sungwoong.survey.survey.adaptor.web.dto.SurveyCreateRequest;
+import sungwoong.survey.survey.domain.QuestionType;
+import sungwoong.survey.survey.adaptor.in.web.dto.QuestionCreateRequest;
+import sungwoong.survey.survey.adaptor.in.web.dto.SurveyCreateRequest;
 
 import java.util.ArrayList;
 import java.util.List;
