@@ -6,6 +6,7 @@ import jakarta.persistence.OneToMany;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.Hibernate;
 import sungwoong.survey.BaseEntity;
 
 import java.time.LocalDateTime;

@@ -3,13 +3,11 @@ package sungwoong.survey.survey.adaptor.out;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 import sungwoong.survey.survey.application.port.required.SurveyQueryPort;
 import sungwoong.survey.survey.domain.Survey;
 
 @Slf4j
 @Repository
-@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class SurveyQueryAdapter implements SurveyQueryPort {
 

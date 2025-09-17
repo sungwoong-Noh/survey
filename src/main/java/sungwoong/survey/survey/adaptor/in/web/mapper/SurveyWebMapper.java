@@ -2,9 +2,7 @@ package sungwoong.survey.survey.adaptor.in.web.mapper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import sungwoong.survey.survey.adaptor.in.web.dto.ChoiceCreateRequest;
-import sungwoong.survey.survey.adaptor.in.web.dto.QuestionCreateRequest;
-import sungwoong.survey.survey.adaptor.in.web.dto.SurveyCreateRequest;
+import sungwoong.survey.survey.adaptor.in.web.dto.*;
 import sungwoong.survey.survey.domain.Choice;
 import sungwoong.survey.survey.domain.Question;
 import sungwoong.survey.survey.domain.Survey;
@@ -57,4 +55,34 @@ public final class SurveyWebMapper {
                 .map(choiceRequest -> Choice.create(choiceRequest.value()))
                 .collect(Collectors.toList());
     }
+
+
+    public SurveyCreateResponse entityToCreateResponse(Survey survey) {
+        return SurveyCreateResponse.of(
+                survey.getId(),
+                survey.getTitle(),
+                survey.getDescription(),
+                questionEntityToCreateResponses(survey.getQuestions())
+        );
+    }
+
+    private List<QuestionCreateResponse> questionEntityToCreateResponses(List<Question> questions) {
+        return questions.stream()
+                .map(q -> QuestionCreateResponse.of(
+                        q.getId(),
+                        q.getQuestionText(),
+                        q.getDescription(),
+                        q.getQuestionType().name(),
+                        q.isRequired(),
+                        choiceEntityToCreateResponses(q.getChoices()))
+                ).toList();
+    }
+
+    private List<ChoiceCreateResponse> choiceEntityToCreateResponses(List<Choice> choices) {
+        return choices.stream()
+                .map(c -> ChoiceCreateResponse.of(c.getId(), c.getValue()))
+                .toList();
+    }
 }
+
+
