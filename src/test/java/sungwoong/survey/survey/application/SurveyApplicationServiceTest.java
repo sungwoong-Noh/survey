@@ -8,10 +8,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import sungwoong.survey.survey.adaptor.out.SurveyJpaRepository;
 
 @ExtendWith(MockitoExtension.class)
-class SurveyDefaultServiceTest {
+class SurveyApplicationServiceTest {
 
     @InjectMocks
-    private SurveyDefaultService surveyDefaultService;
+    private SurveyApplicationService surveyApplicationService;
 
 
     @Mock

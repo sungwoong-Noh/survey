@@ -7,24 +7,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import sungwoong.survey.survey.adaptor.in.web.mapper.SurveyWebMapper;
-import sungwoong.survey.survey.domain.Survey;
 import sungwoong.survey.survey.adaptor.in.web.dto.SurveyCreateRequest;
-import sungwoong.survey.survey.application.port.provider.SurveyWriteService;
+import sungwoong.survey.survey.adaptor.in.web.mapper.SurveyWebMapper;
+import sungwoong.survey.survey.application.port.provider.SurveyUseCase;
+import sungwoong.survey.survey.domain.Survey;
 
 @RestController
 @RequestMapping("/v1/api/survey")
 @RequiredArgsConstructor
 public class SurveyController {
 
-    private final SurveyWriteService surveyWriteService;
+    private final SurveyUseCase surveyUseCase;
 
     private final SurveyWebMapper surveyWebMapper;
 
     @PostMapping
     public ResponseEntity<Survey> create(@RequestParam @Valid SurveyCreateRequest createRequest) {
 
-        Survey survey = surveyWriteService.create(surveyWebMapper.createRequestToEntity(createRequest));
+        Survey survey = surveyUseCase.create(surveyWebMapper.createRequestToEntity(createRequest));
 
         return ResponseEntity.ok(survey);
     }

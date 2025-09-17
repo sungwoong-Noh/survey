@@ -1,9 +1,10 @@
 package sungwoong.survey.survey.application.port.provider;
 
-import sungwoong.survey.survey.adaptor.in.web.dto.SurveyCreateRequest;
 import sungwoong.survey.survey.domain.Survey;
 
-// Port
-public interface SurveyWriteService {
+public interface SurveyUseCase {
+
     Survey create(Survey survey);
+
+    Survey find(Long surveyId);
 }
