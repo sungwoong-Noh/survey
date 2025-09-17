@@ -11,6 +11,7 @@ import sungwoong.survey.BaseEntity;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Entity
@@ -27,7 +28,6 @@ public class Survey extends BaseEntity {
 
     @OneToMany(mappedBy = "survey", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Question> questions = new ArrayList<>();
-
 
     Survey(String title, String description, List<Question> questions) {
         this.title = title;
@@ -62,5 +62,25 @@ public class Survey extends BaseEntity {
         }
 
         return new Survey(title, description, questions);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof Survey survey)) {
+            return false;
+        }
+
+        // PK가 같다면 같은 객체이다.
+        return Objects.equals(getId(), survey.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

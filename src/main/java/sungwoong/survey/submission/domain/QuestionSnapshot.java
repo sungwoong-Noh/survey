@@ -8,7 +8,6 @@ import java.io.Serializable;
 
 @Embeddable
 public record QuestionSnapshot(
-
         @Column(name = "original_question_Id") Long questionId,
         @Column(name = "original_question_text") String questionText,
         @Column(name = "original_question_description") String questionDescription,

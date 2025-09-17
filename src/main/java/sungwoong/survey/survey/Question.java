@@ -9,6 +9,7 @@ import sungwoong.survey.BaseEntity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Entity
@@ -80,5 +81,24 @@ public class Question extends BaseEntity {
     void addChoice(Choice choice) {
         this.choices.add(choice);
         choice.setQuestion(this);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof Question question)) {
+            return false;
+        }
+
+        return Objects.equals(getId(), question.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }
