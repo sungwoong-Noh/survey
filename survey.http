@@ -1,0 +1,32 @@
+### POST
+POST http://localhost:8081/v1/api/survey
+Content-Type: application/json
+
+{
+  "title": "설문조사 테스트 ",
+  "description": "설문조사 테스트를 진행합니다.",
+  "questionCreateRequestList": [
+    {
+      "questionType": "MULTI_CHOICE",
+      "questionText": "무슨 질문을 할까요 ?",
+      "isRequired": false,
+      "choiceCreateRequestList": [
+        {
+          "value": "햄버거"
+        },
+        {
+          "value": "피자"
+        },
+        {
+          "value": "치킨"
+        }
+      ],
+      "description": "이건 질문에 설명입니다."
+    },
+    {
+      "questionType": "SHORT_TEXT",
+      "questionText": "What can we do to improve our service?",
+        "isRequired": true
+    }
+  ]
+}
