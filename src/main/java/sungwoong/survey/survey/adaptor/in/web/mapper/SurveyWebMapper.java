@@ -1,6 +1,7 @@
 package sungwoong.survey.survey.adaptor.in.web.mapper;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 import sungwoong.survey.survey.adaptor.in.web.dto.*;
 import sungwoong.survey.survey.domain.Choice;
@@ -82,6 +83,16 @@ public final class SurveyWebMapper {
         return choices.stream()
                 .map(c -> ChoiceCreateResponse.of(c.getId(), c.getValue()))
                 .toList();
+    }
+
+
+    public Page<SurveySearchResponse> entityToSearchResponse(Page<Survey> surveyPage) {
+
+        return surveyPage.map(survey -> new SurveySearchResponse(
+                survey.getId(),
+                survey.getTitle(),
+                survey.getDescription()
+        ));
     }
 }
 

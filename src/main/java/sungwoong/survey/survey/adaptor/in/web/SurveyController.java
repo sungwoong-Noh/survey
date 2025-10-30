@@ -2,13 +2,12 @@ package sungwoong.survey.survey.adaptor.in.web;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sungwoong.survey.survey.adaptor.in.web.dto.SurveyCreateRequest;
 import sungwoong.survey.survey.adaptor.in.web.dto.SurveyCreateResponse;
+import sungwoong.survey.survey.adaptor.in.web.dto.SurveySearchResponse;
 import sungwoong.survey.survey.adaptor.in.web.mapper.SurveyWebMapper;
 import sungwoong.survey.survey.application.port.provider.SurveyUseCase;
 import sungwoong.survey.survey.domain.Survey;
@@ -34,4 +33,14 @@ public class SurveyController {
                 .body(surveyWebMapper.entityToCreateResponse(survey));
     }
 
+    @GetMapping
+    public ResponseEntity<Page<SurveySearchResponse>> search(@RequestParam(required = false) String keyword,
+                                                             @RequestParam int page,
+                                                             @RequestParam int size) {
+
+        Page<SurveySearchResponse> surveySearchResponses = surveyWebMapper.entityToSearchResponse(surveyUseCase.searchList(keyword, page, size));
+
+        // Implementation for searching surveys with pagination
+        return ResponseEntity.ok(surveySearchResponses);
+    }
 }

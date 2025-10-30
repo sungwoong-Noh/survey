@@ -1,6 +1,8 @@
 package sungwoong.survey.survey.application;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import sungwoong.survey.survey.application.port.provider.SurveyUseCase;
@@ -20,6 +22,7 @@ public class SurveyApplicationService implements SurveyUseCase {
 
     /**
      * WriteImpl
+     *
      * @return
      */
     @Override
@@ -30,11 +33,24 @@ public class SurveyApplicationService implements SurveyUseCase {
 
     /**
      * ReadImpl
+     *
      * @param surveyId
      * @return
      */
     @Override
     public Survey find(Long surveyId) {
         return surveyQueryPort.findById(surveyId);
+    }
+
+    /**
+     * SearchImpl
+     * @param keyword
+     * @param page
+     * @param size
+     * @return
+     */
+    @Override
+    public Page<Survey> searchList(String keyword, int page, int size) {
+        return surveyQueryPort.searchList(keyword, PageRequest.of(page, size));
     }
 }

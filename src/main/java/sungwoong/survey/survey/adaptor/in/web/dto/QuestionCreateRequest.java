@@ -23,5 +23,4 @@ public record QuestionCreateRequest(
             throw new IllegalArgumentException("유효하지 않은 질문 유형입니다: " + this.questionType);
         }
     }
-
 }
